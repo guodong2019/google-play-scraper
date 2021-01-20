@@ -4,8 +4,8 @@ import (
 	"encoding/json"
 	"net/http"
 
-	"github.com/n0madic/google-play-scraper/internal/util"
-	"github.com/n0madic/google-play-scraper/pkg/app"
+	"github.com/guodong2019/google-play-scraper/internal/util"
+	"github.com/guodong2019/google-play-scraper/pkg/app"
 )
 
 const suggURL = "https://market.android.com/suggest/SuggRequest"
