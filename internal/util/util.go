@@ -5,6 +5,7 @@ import (
 	"encoding/json"
 	"fmt"
 	"io/ioutil"
+	"log"
 	"net/http"
 	"net/url"
 	"regexp"
@@ -83,6 +84,7 @@ func ExtractInitData(html []byte) map[string]string {
 			data[string(key[1])] = string(value[1])
 		}
 	}
+	log.Printf("data=%v=\n", data)
 	return data
 }
 
