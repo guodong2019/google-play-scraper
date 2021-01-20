@@ -31,6 +31,7 @@ type App struct {
 	ContentRatingDescription string
 	Description              string
 	DescriptionHTML          string
+	ShortDescription         string
 	Developer                string
 	DeveloperAddress         string
 	DeveloperEmail           string
@@ -119,6 +120,8 @@ func (app *App) LoadDetails() error {
 
 	app.DescriptionHTML = util.GetJSONValue(appData["ds:5"], "0.10.0.1")
 	app.Description = util.HTMLToText(app.DescriptionHTML)
+
+	app.ShortDescription = util.GetJSONValue(appData["ds:5"], "0.10.1.1")
 
 	relativeDevURL := util.GetJSONValue(appData["ds:5"], "0.12.5.5.4.2")
 	devURL, _ := util.AbsoluteURL(playURL, relativeDevURL)
